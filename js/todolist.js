@@ -70,7 +70,6 @@ $(document).ready(function(){
 	 	li=$("li");
 	 	delete1=$(".delete");
 	 	var index=delete1.index($(this));
-	 	console.log(index)
 	 	todos.splice(index,1)
 	 	localStorage.todos=JSON.stringify(todos)
 	 	li.eq(index).remove();
@@ -79,9 +78,10 @@ $(document).ready(function(){
      	ul.empty();
      	for(var i=0;i<todos.length;i++){
      		var c=(todos[i].state)?"done":""
-     		$("<li class='"+c+"'><div class='content'>"+todos[i].name+"<div class='delete iconfont'>&#xe779;</div></div></li>")
+     		$("<li class='"+c+"'><div class='content'>"+todos[i].name+"<div class='delete iconfont'>&#xe65c;</div></div></li>")
      		.appendTo(ul);
      	}
+		
      }
     
 
@@ -117,7 +117,7 @@ $(document).ready(function(){
   		$(this).delay(i*80).queue(function(){
   			$(this).addClass("dong1").dequeue()
   		}).delay(800).queue(function(){
-  			$(this).remove().dequeue();
+  			$(this).removeClass("dong1").dequeue();
   		})
   	})
    var newarr=[];
@@ -153,12 +153,14 @@ $(document).ready(function(){
 	$(".nav").hide();
 	$("ul").hide();
 	$(".footer").hide();
+	$(".doset").hide();
 	$(".home").on("touchstart",function(){
 		$(".home").hide();
 		$(".header").show();
 		$(".nav").show();
 		$("ul").show();
 		$(".footer").show();
+		$(".doset").hide();
 	});
 	//当点击返回键back时，编写页面消失，挽回到新建便签
 	$(".back").on("touchstart",function(){
@@ -167,5 +169,13 @@ $(document).ready(function(){
 		$("ul").hide();
 		$(".footer").hide();
 		$(".home").show();
+	});
+	//
+	ul.on("touchstart",".done",function(){
+		$(".doset").delay(111).queue(function(){
+			$(this).hide().dequeue();
+		}).delay(888).queue(function(){
+			$(this).show().dequeue();
+		});
 	});
 });

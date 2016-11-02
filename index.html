@@ -14,28 +14,39 @@
 	<meta name="theme-color" content="#2F3BA2">
 	<link rel="icon" sizes="192x192" href="chrome-touch-icon-192x192.png">
 	<title>todolist</title>
-	<link rel="stylesheet" href="./css/todolist.css" />
+	<link rel="stylesheet" href="./css/todo.css" />
 </head>
 <body>
 	<div class="header">
+		<span class="iconfont">&#xe7e9;</span>
 		<input type="text" class="input"/>
 		<div class="add">+</div>
 	</div>
-	<!--<ul id="ul">
+	<ul id="ul">
 		<li class="done">
-			<div class="content">购物</div>
-			<div class="delete">x</div>
+			<div class="content">
+				很重要
+				<div class="delete iconfont">&#xe779;</div>
+			</div>
 		</li>
 		<li class="">
-			<div class="content">旅游</div>
-			<div class="delete">x</div>
+			<div class="content">
+				很紧急
+				<div class="delete iconfont">&#xe779;</div>
+			</div>
 		</li>
-	</ul>-->
+		<li class="">
+			<div class="content">
+				不重要
+				<div class="delete iconfont">&#xe779;</div>
+			</div>
+		</li>
+	</ul>
 	<!--<input type="date" />-->
 	<div class="footer">
-		<div class="all active">全部</div>
-		<div class="completed">已封存</div>
-		<div class="unfinish">未封存</div>
+		<div data-role="all" class="all">全部</div>
+		<div data-role="com" class="complete">已封存</div>
+		<!--<div data-role="now" class="nowan">未封存</div>-->
 	</div>
 </body>
 </html>

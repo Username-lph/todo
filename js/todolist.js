@@ -77,14 +77,13 @@ $(document).ready(function(){
 	  })
      function render(){
      	ul.empty();
-     	
      	for(var i=0;i<todos.length;i++){
      		var c=(todos[i].state)?"done":""
-     		$("<li class='"+c+"'><div class='content'>"+todos[i].name+"</div><div class='delete'></div></li>")
+     		$("<li class='"+c+"'><div class='content'>"+todos[i].name+"<div class='delete iconfont'>&#xe779;</div></div></li>")
      		.appendTo(ul);
      	}
      }
-     
+    
 
 //    最后下面那三个按钮
    var all=$(".all")
@@ -92,6 +91,7 @@ $(document).ready(function(){
    var divs=$(".footer div");
   footer.on("touchend","div",function(){
   	var index=divs.index($(this))
+  	divs.eq(0).addClass("active");
   	divs.removeClass("active")
   	$(this).addClass("active")
    	var li=$("li");

@@ -82,6 +82,28 @@ $design-size:750px;
         font-size:28px;
     }
 }
+/*上侧nav*/
+.nav{
+    height:0.99rem;
+    background:red;
+    margin:0.1rem auto;
+    line-height:0.99rem;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    span.iconfont{
+        display:inline-block;
+        width:0.36rem;
+        height:0.36rem;
+        float:left;
+        padding-left:0.3rem;
+        padding-right:0.3rem;
+        margin:0rem 0.62rem;
+        text-align:center;
+    }
+}
 /*content*/
 #ul{
     width:95%;
@@ -91,8 +113,8 @@ $design-size:750px;
         display:block;
         clear:both;
     }
-    
     li .done .content{
+        border-radius:10%;
         text-decoration:line-through;
         color:#FF0000;
     }
@@ -119,6 +141,7 @@ $design-size:750px;
         line-height:0.3rem;
     }
 }
+
 /*footer*/
 .footer{
     width:90%;

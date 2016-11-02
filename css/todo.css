@@ -160,6 +160,31 @@ body {
   font-size: 28px;
 }
 
+/*上侧nav*/
+.nav {
+  height: 0.99rem;
+  background: red;
+  margin: 0.1rem auto;
+  line-height: 0.99rem;
+}
+
+.nav:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.nav span.iconfont {
+  display: inline-block;
+  width: 0.36rem;
+  height: 0.36rem;
+  float: left;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  margin: 0rem 0.62rem;
+  text-align: center;
+}
+
 /*content*/
 #ul {
   width: 95%;
@@ -173,6 +198,7 @@ body {
 }
 
 #ul li .done .content {
+  border-radius: 10%;
   text-decoration: line-through;
   color: #FF0000;
 }

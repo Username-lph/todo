@@ -12,7 +12,8 @@ html{
 }
 body{
     font-size:16px;
-    background-image:url(../images/todo.jpg);
+//  background-image:url(../images/todo.jpg);
+    background:#fff;
     font-family:"微软雅黑"；
 }
 $design-size:750px;
@@ -29,6 +30,14 @@ $design-size:750px;
     bottom:0rem;
     margin:auto;
 }
+@mixin center{
+    position:absolute;
+    top:0rem;
+    bottom:0rem;
+    left:0rem;
+    right:0rem;
+    margin:auto;
+}
 @font-face {
   font-family: 'iconfont';  /* project id："172799" */
   src: url('../font/iconfont.eot');
@@ -40,12 +49,38 @@ $design-size:750px;
 .iconfont{
     font-family:"iconfont";
 }
+/*home*/
+.home{
+    width:5rem;
+    height:5rem;
+    background:url(../images/home.png);
+    background-size:cover;
+    @include center;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    a{
+        display:block;
+        width:2.5rem;
+        height:2.5rem;
+        white-space:pre-wrap;
+        @include center;
+        line-height:0.5rem;
+        text-align:center;
+        text-decoration:none;
+        color:#383838;
+        font-weight:600;
+    }
+}
 /*header*/
 .header{
     width:100%;
-    height:1rem;
+    height:1.12rem;
     position:relative;
     border-bottom:1px solid #ccc;
+    background:#354462;
     span.iconfont{
         display:inline-block;
         width:0.5rem;
@@ -144,43 +179,50 @@ $design-size:750px;
 
 /*footer*/
 .footer{
-    width:90%;
-    margin:0.1rem 0.15rem 0rem 0.33rem;
+    width:100%;
+//  margin:0.1rem 0.15rem 0rem 0.33rem;
     position:fixed;
     *position:absolute;
-    bottom:0.15rem;
+    bottom:0rem;
     text-align:center;
     background:#02E6B5;
-    border-radius:0.5rem;
+//  border-radius:0.5rem;
+    background:#fff;
+    border-top:1px solid #eee;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
     div{
         width:45.333%;
         height:0.88rem;
         text-align:center;
-        line-height:0.88rem;
+        line-height:0.38rem;
 //      background:#fff;
         float:left;
         cursor:pointer;
-        border-radius:0.8rem;
+//      border-radius:0.8rem;
     }
     div:nth-child(1){
         margin:0rem 0.3rem 0rem 0rem; 
     }
     div:nth-child(2){
-        margin:0rem 0rem 0rem 0.33rem;
+        margin:0rem 0rem 0rem 0.39rem;
     }
-    div.complete{
-        border-right:0.01rem solid #ccc;
-        border-left:0.01rem solid #ccc;
-    }
+//  div.complete{
+//      border-right:0.01rem solid #ccc;
+//      border-left:0.01rem solid #ccc;
+//  }
     div.active{
-        background:#fff;
-        color:#FF0000;
+//      background:#fff;
+        color:#00695c;
     }
-    div:nth-child(1).active{
-        background:#fff;
-    }
+    
 }
-
+.footer div:nth-child(1).active{
+    color:#00695C;
+}
 .clearall{
     height: 0.8rem;
     line-height: 0.8rem;

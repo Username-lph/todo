@@ -89,9 +89,9 @@ $(document).ready(function(){
    var all=$(".all")
    var footer=$(".footer")
    var divs=$(".footer div");
+   $(".footer div").eq(0).addClass("active");
   footer.on("touchend","div",function(){
   	var index=divs.index($(this))
-  	divs.eq(0).addClass("active");
   	divs.removeClass("active")
   	$(this).addClass("active")
    	var li=$("li");
@@ -147,4 +147,25 @@ $(document).ready(function(){
 //   }
 //   arr=newarr;
 //   console.log(arr)
-})
+	//当点击新建便签的时候home消失，同时要编写的内容出现
+	$(".home").show();
+	$(".header").hide();
+	$(".nav").hide();
+	$("ul").hide();
+	$(".footer").hide();
+	$(".home").on("touchstart",function(){
+		$(".home").hide();
+		$(".header").show();
+		$(".nav").show();
+		$("ul").show();
+		$(".footer").show();
+	});
+	//当点击返回键back时，编写页面消失，挽回到新建便签
+	$(".back").on("touchstart",function(){
+		$(".header").hide();
+		$(".nav").hide();
+		$("ul").hide();
+		$(".footer").hide();
+		$(".home").show();
+	});
+});

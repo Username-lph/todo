@@ -17,8 +17,13 @@
 	<link rel="stylesheet" href="./css/todo.css" />
 </head>
 <body>
+	<!--首页-->
+	<div class="home">
+		<a href="javascript:;">点击新建便签，开始记录吧！</a>
+	</div>
+	<!--header-->
 	<div class="header">
-		<span class="iconfont">&#xe7e9;</span>
+		<span class="back iconfont">&#xe7e9;</span>
 		<input type="text" class="input"/>
 		<div class="add">+</div>
 	</div>
@@ -52,10 +57,15 @@
 	<!--<input type="date" />-->
 	
 	<div class="footer">
-		<div data-role="all" class="all">全部</div>
-		<div data-role="com" class="complete">已封存</div>
+		<div data-role="all" class="all">
+			<span class="iconfont">&#xe61a;<br/>待办</span>
+		</div>
+		<div data-role="com" class="complete iconfont">
+			<span>&#xe660;<br/>待办集</span>
+		</div>
 		<!--<div data-role="now" class="nowan">未封存</div>-->
 	</div>
+	
 </body>
 </html>
 <script src="js/jquery.js"></script>
